@@ -1,9 +1,12 @@
 # first chart
 
 library(tidyverse)
+
 # Load data
+population <- read.csv("population.csv")
+gdp <- read.csv("GDP.csv")
+covid19 <- read.csv("COVID19_state.csv")
 
-population <- read.csv("csvData.csv")
+#find variables
 
-ggplot(data = population) +
-  geom_point(mapping = aes(x = State, y = Pop))
+#create chart1 - map
