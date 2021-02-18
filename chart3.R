@@ -13,7 +13,6 @@ states <-
   select(cOVID19_state, State, Infected)
 
 states_map <- map_data("state")
-infected_map <- left_join(states_map, states, by = "region")
 
 
 # Merge Date
