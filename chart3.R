@@ -7,7 +7,7 @@ library(ggthemes)
 # Read data
 cOVID19_state <- read.csv("COVID19_state.csv")
 
-# Retrieve the states map data and merge with crime data
+# Retrieve the states map data and merge with covid data
 
 states <- 
   select(cOVID19_state, State, Infected)
