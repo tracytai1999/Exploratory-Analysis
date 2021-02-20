@@ -24,7 +24,7 @@ data <- merge(states_map, states,
 
 # Create the map
 
-ggplot(data) +
+chart3 <- ggplot(data) +
   geom_polygon(aes(long, lat, group = group, fill = Infected)) +
   coord_map("bonne", parameters=45) +
   ggthemes::theme_map() +

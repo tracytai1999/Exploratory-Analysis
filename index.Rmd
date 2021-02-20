@@ -3,46 +3,35 @@ title: "Statewise Covid-19 Population"
 output: html_document
 ---
 
-  As Covid-19 spreads through the world, many people have suffered in this pandemic. As a result, people have changed their life style dramatically to stay healthy, including work from home, online teaching courses, and so on. Economics have also encountered tremendous challenges. Restaurants, shopping malls and gyms are all closed to keep Covid-19 from spreading, and resulted in companies facing great loss. In this project, we want to use data visualization to show how Covid-19 effect individuals and economy in each state, and compare data from each state.
+    As _Covid-19_ spreads through the world, many people have suffered in this pandemic. As a result, people have changed their life style dramatically to stay healthy, including work from home, online teaching courses, and so on. Economics have also encountered tremendous challenges. Restaurants, shopping malls and gyms are all closed to keep Covid-19 from spreading, and resulted in companies facing great loss. In this project, we want to use data visualization to show how Covid-19 effect individuals and economy in each state, and compare data from each state.
   
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(knitr)
-library(tidyverse)
+library("knitr")
+library("tidyverse")
 source("chart1.R")
 source("summary.R")
 source("chart2.R")
+source("chart3.R")
 
 ```
 
-
-
-# Write a summary paragraph that includes information calculated by your summary information function
-
-```{r, echo=FALSE, message=FALSE}
-#summary(cars)
-
-covid19 <- read.csv("COVID19_state.csv")
-population <- read.csv("population.csv")
-
-highest_state <- covid19 %>%
-  filter(Infected == max(Infected, na.rm = T)) %>%
-  pull(State)
+```{r, include=FALSE}
+#summary info
+#highest_pop_state
+#highest_state
 
 ```
+    
+    - In our analysis, `r highest_pop_state` has the highest civil population among all the other states. At the same time, `r highest_state` has the highest number of Covid-19 infected population. It in our commonsense that state with high civil population are more likely to have a high Covid-19 infected population, and our data also supports this conclusion. Therefore, the number of Covid-19 infected people is related to the civil population of a state. 
 
-In our analysis, `r highest_state` has the highest number of Covid-19 infected population. 
-
-
-
-# Render your table and describe pertinent observations found in it
 
 
 ```{r, echo=FALSE, message=FALSE}
 plot(infected_bar_chart)
 ```
   
-  - This figure presented the ten states with most Covid-19 infected cases. We can see that the top three states are California, Texas and Florida. These three states has cases over 800,000 cases, and the following states are all under 500,000 cases. This discrepancy raises a question to the cause of this huge difference between number of cases between states. 
+    This figure presented the ten states with most Covid-19 infected cases. We can see from this chart that the top three states are California, Texas and Florida. These three states has cases over 800,000 cases, and the following states are all under 500,000 cases. This discrepancy raises a question to the cause of this huge difference between number of cases between states. 
 
 
 #Chart 2
@@ -51,13 +40,14 @@ plot(infected_bar_chart)
 
 ```
 
+  - 
 
 #Chart 3
 ```{r, echo=FALSE}
-
+plot(chart3)
 
 ```
+    
+    This chart was intended to show how Covid-19 infected population spreads throughout the country. This map presented the distribution of Covid-19 infected population, and be aware of the states with high infected populations. As we can see from this map, we could conclude that California and Texas are states with large Covid-19 infected population. We should all stay safe and protect ourselves in this situation. 
 
-
-# Describe the purpose of each chart (e.g., "this chart was intended to show the relationship between..."), render each chart, and describe pertinent observations found in each chart
 

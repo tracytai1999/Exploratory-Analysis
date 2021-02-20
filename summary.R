@@ -1,4 +1,5 @@
 # Summary information
+
 library(tidyverse)
 
 # Load data
