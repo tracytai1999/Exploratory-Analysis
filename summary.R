@@ -3,10 +3,10 @@
 library(tidyverse)
 
 # Load data
-COVID19_state <- read_csv("COVID19_state.csv")
+covid_19_state <- read_csv("COVID19_state.csv")
 
 #Simplify the dataset to show the state and infections
-states <- select(COVID19_state, State, Infected)
+states <- select(covid_19_state, State, Infected)
 
 summary_info <- list()
 

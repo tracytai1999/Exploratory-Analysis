@@ -53,21 +53,21 @@ top_five_states <- by_gdb_count %>%
 
 # Create a basic bar
 pie_chart_basic <- ggplot(top_five_states,
-  aes(x="", y=State, fill=as.factor(Proportion))) + 
-  geom_bar(stat="identity", width=3)
+  aes(x = "", y = State, fill = as.factor(Proportion))) +
+  geom_bar(stat = "identity", width = 3)
 
 # Convert to pie (polar coordinates) and add labels
-pie_chart_label <- pie_chart_basic + coord_polar("y", start=0)+ 
-  geom_text(aes(label = State), 
+pie_chart_label <- pie_chart_basic + coord_polar("y", start = 0) +
+  geom_text(aes(label = State),
             position = position_stack(vjust = 0.5), colour = "white")
 
 # Add color scale (hex colors)
-pie_chart_colr <- pie_chart_label + 
+pie_chart_colr <- pie_chart_label +
   scale_fill_manual(values = c("#55DDE0", "#33658A", "#2F4858",
                                "#F6AE2D", "#F26419", "#999999"))
 
 # Remove labels and add title
-pie_chart_title <- pie_chart_colr + 
+pie_chart_title <- pie_chart_colr +
   labs(x = "State", y = "State Proportion",
   fill = "State", title = "State GDP")
 
@@ -77,6 +77,3 @@ pie_chart_theme <- pie_chart_title + theme_classic() +
   axis.text = element_blank(),
   axis.ticks = element_blank(),
   plot.title = element_text(hjust = 0.5, color = "#666666"))
-  
-
-
