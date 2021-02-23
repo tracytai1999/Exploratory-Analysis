@@ -11,11 +11,12 @@ Introduction
 library("knitr")
 knitr::opts_chunk$set(echo = TRUE)
 
-source("chart1.R")
+source("script//chart1.R")
 source("summary.R")
 source("chart2.R")
 source("chart3.R")
 source("table.R")
+options(scipen=999)
 
 ```
 

@@ -1,6 +1,7 @@
 #loading data
 library(tidyverse)
 library(dplyr)
+library(lintr)
 
 #load data frame
 gdp <- read_csv("GDP.csv")
